@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id']))
+		{
+		echo '<script type="text/javascript">alert("Please Login Again..");</script>';
+		 header("location:index.php");
+		}
+?>
+<!DOCTYPE html>
 <html>
 <head>
 <link href="css/style.css" rel="stylesheet">
@@ -30,6 +39,7 @@
 <button class="taskAdd" ng-click="addNew()"><i class="fa fa-plus icon"></i>Add task</button>
 <button class="taskDelete" ng-click="deleteTask()"><i class="fa fa-trash-o icon"></i>Delete Tasks</button>
 <button class="taskDelete" ng-click="deleteTask()"><i class="fa fa-trash-o icon"></i>Update Tasks</button>
+<button><i class="fa fa-trash-o icon"><a href="logout.php">Logout</a></i></button>
 </div>
 </form>
 <ul  class="taskList">
